@@ -1,0 +1,53 @@
+/* 自定义样式 */
+
+/* 代码块样式增强 */
+.vp-code-group .tabs {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Rust 代码高亮增强 */
+.language-rust .token.keyword {
+  color: #ff7b72;
+}
+
+.language-rust .token.string {
+  color: #a5d6ff;
+}
+
+.language-rust .token.number {
+  color: #79c0ff;
+}
+
+/* 响应式表格 */
+.vp-doc table {
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+/* 自定义容器样式 */
+.custom-block.tip {
+  border-color: #42b883;
+}
+
+.custom-block.warning {
+  border-color: #e7c000;
+}
+
+.custom-block.danger {
+  border-color: #cc0000;
+}
+
+/* 导航菜单优化 */
+.VPSidebar {
+  scrollbar-width: thin;
+}
+
+/* 代码复制按钮样式 */
+.vp-copy-code-button {
+  opacity: 0.8;
+}
+
+.vp-copy-code-button:hover {
+  opacity: 1;
+}
