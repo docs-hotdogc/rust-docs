@@ -1,66 +1,68 @@
-# Rust 程序设计语言（2024 edition）简体中文版
+# Rust 程序设计语言（2024 版）简体中文版 (VitePress 迁移版)
 
-![Build Status](https://github.com/KaiserY/trpl-zh-cn/workflows/CI/badge.svg)
+[![GitHub license](https://img.shields.io/github/license/docs-hotdogc/rust-docs)](https://github.com/docs-hotdogc/rust-docs/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/docs-hotdogc/rust-docs)](https://github.com/docs-hotdogc/rust-docs/stargazers)
+一份《The Rust Programming Language》官方教程的简体中文翻译，使用 [VitePress](https://vitepress.dev/) 进行了重新构建，以提供更现代化、更快速的阅读体验。
 
-## 状态
+## 📖 [在线阅读](https://your-vitepress-site.com)  ---
 
-- 2024 edtion 施工完毕。
+## 项目简介
 
-PS:
+本项目 fork 自 [KaiserY/trpl-zh-cn](https://github.com/KaiserY/trpl-zh-cn) 的 2024 版中文翻译。
 
-* 对照源码位置：[https://github.com/rust-lang/book/tree/main/src][source]
-* 每章翻译开头都带有官方链接和 commit hash 的注释，若发现与官方不一致，欢迎 Issue 或 PR
+## 本地开发与贡献
+
+如果你希望在本地运行此站点，或参与贡献，请遵循以下步骤。本项目推荐使用 [pnpm](https://pnpm.io/) 作为包管理器。
+
+1.  **克隆仓库**
+    ```bash
+    git clone [https://github.com/docs-hotdogc/rust-docs.git](https://github.com/docs-hotdogc/rust-docs.git)
+    cd rust-docs
+    ```
+
+2.  **安装依赖**
+    ```bash
+    pnpm install
+    ```
+    *如果你没有安装 pnpm，也可以使用 `npm install` 或 `yarn`。*
+
+3.  **启动开发服务器**
+    ```bash
+    pnpm docs:dev
+    ```
+    此命令会启动一个本地开发服务器，通常地址为 `http://localhost:5173`。
+
+4.  **构建静态站点**
+    如果你需要生成最终的静态文件（用于部署），请运行：
+    ```bash
+    pnpm docs:build
+    ```
+    构建好的文件将位于 `docs/.vitepress/dist` 目录。
+
+## 内容来源与校对
+
+#### 内容来源
+- 本项目翻译内容与官方 `main` 分支保持同步。
+- 官方源仓库位置：[https://github.com/rust-lang/book/tree/main/src][source]
+- 每章翻译的开头都带有官方链接和 commit hash 的注释，若发现与官方不一致，欢迎提交 Issue 或 PR。
 
 [source]: https://github.com/rust-lang/book/tree/main/src
 
-## 校对
+#### 翻译校对
+- 部分章节采用 ChatGPT-4o-mini 进行翻译校对。提示词详见 [proofreading_prompt.md](proofreading_prompt.md)。
 
-部分章节采用 ChatGPT o4-mini 进行翻译校对。提示词详见 [proofreading_prompt.md](proofreading_prompt.md)
+## 其他格式 (PDF)
 
-## 静态页面构建与文档撰写
+原项目提供了一个由 `mdbook-typst-pdf` 生成的 [PDF 版本](https://kaisery.github.io/trpl-zh-cn/Rust%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88.pdf)。
 
-### 构建
-
-你可以将本 mdbook 构建成一系列静态 html 页面。这里我们采用 [mdbook](https://rust-lang.github.io/mdBook/index.html) 打包出静态网页。在这之前，你需要安装 [Rust](https://www.rust-lang.org/zh-CN/)。
-
-全局安装 mdbook
-
-``` bash
-cargo install mdbook
-```
-
-cd 到项目目录，然后开始构建。构建好的静态文档会出现在 "./book/html" 中
-
-```bash
-mdbook build
-```
-
-### 文档撰写
-
-可以通过任意的 http 服务器来预览构建的文档。举个例子：
-
-```bash
-cargo install simple-http-server
-simple-http-server .\book\html\ -i
-```
+**请注意**：由于本项目已迁移至 VitePress，该 PDF 可能不会再更新，其内容可能落后于当前网站。
 
 ## 社区资源
 
-- Rust 语言中文社区：<https://rustcc.cn/>
-- Rust 编程语言社区 1 群，群号：303838735（已满，只能内部邀请）
-- Rust 编程语言社区 2 群，群号：813448660
+-   **Rust 语言中文社区**：<https://rustcc.cn/>
+-   **Rust 编程语言社区 1 群**：303838735（已满，只能内部邀请）
+-   **Rust 编程语言社区 2 群**：813448660
 
-## PDF
+## 许可证
 
-[Rust 程序设计语言 简体中文版.pdf](https://kaisery.github.io/trpl-zh-cn/Rust%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88.pdf)
-
-- 由 [mdbook-typst-pdf](https://github.com/KaiserY/mdbook-typst-pdf) 生成，有任何问题欢迎 issue 或 PR
-
-## GitBook
-
-本翻译主要采用 [mdBook](https://github.com/rust-lang-nursery/mdBook) 格式。同时支持 [GitBook](https://github.com/GitbookIO/gitbook)，但会缺失部分功能，如一些代码没有语法高亮。
-
-本翻译加速查看站点有：
- - 深圳站点：<http://120.78.128.153/rustbook>
-
-[GitBook.com](https://www.gitbook.com/) 地址：<https://kaisery.github.io/trpl-zh-cn/>
+本项目采用 [MIT](LICENSE) 许可证。
